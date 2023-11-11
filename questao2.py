@@ -7,7 +7,7 @@ def crieUmaFuncaoQueRetornaQuantasLetrasPossuiUmaPalavraSeForPassadoUmaFraseAFun
         for letra in palavra:
             if letra == " ":
                 numero_de_espacos+=1
-            elif letra in "abcdefghijklmnopqrstuvwxyz":
+            elif letra.lower() in "abcdefghijklmnopqrstuvwxyz":
                 numero_de_letras+=1
             elif letra in ",.;:!?:":
                 numero_de_pontuacoes+=1
