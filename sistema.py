@@ -7,9 +7,11 @@ caixinha.geometry("400x400")
 caixinha.configure(bg="plum")
 def maiorIdade():
     if 2023 - int(nomeInput.get()) >= 18:
+        resultado.configure(text="Maior de idade")
         print("Maior de idade")
     else: 
-        print("menor de idade")
+        resultado.configure(text="Menor de idade")
+        print("Menor de idade")
 
 
 nome = Label(text = "Diz o ano q tu nasceu", bg="purple",fg="white")
@@ -20,6 +22,9 @@ nomeInput.pack()
 
 botao = Button(caixinha , text="Eviar", command=maiorIdade)
 botao.pack()
+
+resultado = Label(text="Resposta: ")
+resultado.pack()
 
 
 
