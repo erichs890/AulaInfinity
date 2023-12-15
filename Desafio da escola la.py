@@ -10,29 +10,39 @@ def cadastrarAluno():
     notas = []
     for nota in range(4):
         nota = float(input("Diga a nota do aluno: \n"))
+        while nota > 10:
+            print("ponha uma nota de 0 a 10")
+            nota = float(input("Diga a nota do aluno: \n"))
+            
         notas.append(nota)
     numero += 1
+
     aluno = {
         "nome":nome,
         "cpf":cpf,
         "turma":turma,
-        "nota":nota,
+        "nota":notas,
         "numero" : numero
     }
+
     print("Aluno cadastrado com exito!")
     alunos.append(aluno)
+
+
 def visualizarAluno():
     for aluno in alunos:
+        print("\nNumero", aluno["numero"])
         print("\nNome", aluno ["nome"])
         print("\nCpf", aluno ["cpf"])
         print("\nTurma", aluno ["turma"])
-        print("\nNumero", aluno["numero"])
-        for i, nota in enumerate(aluno["notas"], start=1):
-            print(f"Nota {i} : {nota}")
+        print("\nNotas:", aluno["nota"])
+
 def deletarAluno():
     matador = int(input("Qual numero do aluno q voce quer remover: \n"))
-    alunos.remove(matador -1)
+    alunos.pop(matador -1)
     print("Aluno eliminado com sucesso! ;)")
+
+
 while True:
     menuzin = int(input( "1 - Cadastrar aluno \n2 - Visualizar alunos cadastrados \n3 - Deletar alunos \n4 - Sair \n"))
     match menuzin:
